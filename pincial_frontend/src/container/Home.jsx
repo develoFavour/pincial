@@ -2,12 +2,10 @@ import React, { useState, useRef, useEffect } from "react";
 import { HiMenu } from "react-icons/hi";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { Link, Route, Routes } from "react-router-dom";
-
 import { Sidebar, UserProfile } from "../components";
 import { userQuery } from "../utils/data";
 import Pins from "./Pins";
 import { client } from "../client";
-// import logo from "../assets/logo.png";
 import logo from "../assets/pincial2.svg";
 
 import { fetchUser } from "../utils/fetchUser";
@@ -23,7 +21,7 @@ function Home() {
 		client.fetch(query).then((data) => {
 			setUser(data[0]);
 		});
-	}, []);
+	});
 	useEffect(() => {
 		scrollRef.current.scrollTo(0, 0);
 	}, []);
